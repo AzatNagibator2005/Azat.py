@@ -1,0 +1,38 @@
+with open('text.txt', 'r') as f:
+  text = f.read()
+sp = []
+sp2 = []
+sp3 = []
+z= 0
+m = 0
+st =''
+alpha = "abcdefghijklmnopqrstuvwxyz"
+alph = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+sym = '?-().,"´2013’4& %2:;'
+st2 =""
+for i in range(len(text)):
+  if text[i] == "." or text[i] == "!" or text[i] == "?":
+    sp.append(text[z:i+1])
+    z = i + 1
+for i in range(len(sp)):
+  for j in range(len(sp[i])):
+    if sp[i][j] == "?":
+      sp2.append(sp[m:i])
+      m = i
+sp2.append(sp[m:i])
+for i in sp2:
+  for j in i:
+    st+=j
+  sp3.append(st)
+  st = ""
+for i in sp3[1:]:
+  for k in range(26):
+    for j in i:
+      if j in alph:
+        st2+=alph[(alph.index(j)+k)%len(alph)]
+      if j in alpha:
+        st2+=alpha[(alpha.index(j)+k)%len(alpha)]
+      if j in sym:
+        st2+=str(j)
+    print(st2)
+    st2 = ""
