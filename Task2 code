@@ -1,0 +1,10 @@
+alpha = [0,"A", "B", "C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+flag = input()[11:-1]
+flag = flag.split("|")
+flagnorm = []
+for i in flag:
+    flagnorm.append(int(i))
+slovo =""
+for i in flagnorm:
+    slovo+=alpha[i]
+print(slovo)
