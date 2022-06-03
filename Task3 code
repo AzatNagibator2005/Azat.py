@@ -1,1 +1,20 @@
-
+alpha = "qwertyuiopasdfghjklzxcvbnm_{}1234567890"
+text = input()
+hamma = "thekey"
+sph = []
+spt = []
+n = len(alpha)//len(hamma)+1
+lent = len(text)
+hamma*=n
+otv=""
+for i in text:
+    for j in range(len(alpha)):
+        if i == alpha[j]:
+            spt.append(j+1)
+for i in hamma:
+    for j in range(len(alpha)):
+        if i == alpha[j]:
+            sph.append(j+1)
+for i in range (len(spt)):
+    otv+=alpha[(sph[i]+spt[i])%38]
+print(otv)
