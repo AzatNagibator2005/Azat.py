@@ -1,0 +1,7 @@
+a = input()
+with open(a, 'rb') as f:
+    text = f.read()[:2]
+    if text == b'MZ':
+        print("4D5A"+" "+"MZ"+" "+'executable, OS Windows')
+    else:
+        print("4D5A"+" "+"MZ"+" "+'non-executable')
