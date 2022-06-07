@@ -1,0 +1,27 @@
+with open('code.txt', encoding = 'utf-8') as f:
+    text = f.readline()
+    sp = []
+    raz = [text.find('('), text.find(')')]
+    text = text[raz[0]+1:raz[1]]
+    sl = text.split(',')
+    #a =text[:text.find('=')].lstrip()
+    for text in f.readlines():
+        if '+=' in text or '==' in text or '-=' in text or '*=' in text or '/=' in text or '**=' in text:
+            continue
+        elif '=[' in text:
+            sp.append(text[:text.find('=')].lstrip())
+        elif '=' in text:
+            sl.append(text[:text.find('=')].lstrip())
+with open('code.txt', encoding = 'utf-8') as f:
+    text = f.read()
+sp = list(set(sp))
+sl = list(set(sl))
+lsp = len(sp)
+lsl = len(sl)
+#gg = 'R'+str(i+1)
+#bg = 'a'+str(i+1)
+for i in range(lsp):
+    text = text.replace(sp[i], 'R'+str(i+1))
+for i in range(lsl):
+    text = text.replace(sl[i], 'a'+str(i+1))
+print(text)
