@@ -1,0 +1,19 @@
+id  = True
+idnt = False
+class zlovredi():
+    def __init__(sam):
+        sam.timer = 0
+        sam.status = idnt
+yf = [zlovredi()]
+kolvo = int(input())
+no = int(input())
+for vr in range(kolvo):
+    for i in yf:
+        if i.status:
+            for j in range(no):
+                [yf.append(zlovredi())]
+        elif not i.status and i.timer == 1:
+            i.status = id
+        i.timer += 1
+lenf = len(yf)
+print(lenf)
